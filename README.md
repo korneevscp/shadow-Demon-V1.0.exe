@@ -1,15 +1,15 @@
-korneevscp-INJ
+# korneevscp-INJ
 
 Petit utilitaire Win32 en C pour démonstration / usage en laboratoire.
 Lisez la section « Sécurité & Légalité » avant toute utilisation.
 
-Description
+# Description
 
 Application graphique Windows (API Win32) qui permet de rechercher un processus par nom et d’injecter une DLL dans ce processus via allocation mémoire distante et CreateRemoteThread(LoadLibraryA). Interface minimale : champ pour le nom du processus, champ pour le chemin de la DLL, bouton Browse et bouton Inject.
 
 But pédagogique : illustrer l’utilisation des API Windows (Toolhelp32, OpenProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread) et la création d’une fenêtre Win32 simple.
 
-Avertissement — Sécurité & Légalité (lire impérativement)
+# Avertissement — Sécurité & Légalité (lire impérativement)
 
 Ce logiciel peut être employé à des fins malveillantes (injection de code).
 
@@ -19,7 +19,7 @@ Testez uniquement sur des machines et des processus dont vous avez la pleine aut
 
 Je ne fournirai pas d’assistance pour une utilisation illégale ou non autorisée.
 
-Fonctionnalités
+# Fonctionnalités
 
 Interface GUI Win32 (EDIT, BUTTON, STATIC).
 
@@ -31,7 +31,7 @@ Boîte de dialogue standard Windows pour sélectionner la DLL.
 
 Apparence texte cyan sur fond noir (style simple).
 
-Prérequis
+# Prérequis
 
 OS : Windows.
 
@@ -68,7 +68,7 @@ Ajoutez comctl32.lib aux dépendances du linker si nécessaire.
 
 Build.
 
-Utilisation
+# Utilisation
 
 Lancez l’exécutable (préférablement dans une VM de test).
 
@@ -94,7 +94,7 @@ Logging/verbose pour faciliter le debug.
 
 Remplacement de CreateRemoteThread par des méthodes plus robustes si ciblé pour usage avancé (attention aux implications légales et éthiques).
 
-Dépannage
+# Dépannage
 
 Process not found. — Vérifiez que le processus est bien en cours d’exécution et que le nom est exact (incluant .exe si nécessaire).
 
@@ -102,7 +102,7 @@ Injection failed. — Vérifiez les droits (exécutez en administrateur dans la 
 
 Problèmes de compilation — Assurez-vous d’avoir les headers Windows (<windows.h>, <tlhelp32.h>) et que vous compilez sous Windows.
 
-Tests recommandés (responsables)
+# Tests recommandés (responsables)
 
 Créez une VM Windows dédiée.
 
@@ -110,25 +110,9 @@ Utilisez un exécutable de test que vous contrôlez et une DLL de test inoffensi
 
 Ne testez pas sur machines de production ni sur des cibles qui ne vous appartiennent pas.
 
-Licence
 
-Aucune licence fournie dans le dépôt. Si vous voulez publier ce projet, ajoutez une licence explicite (par ex. MIT, Apache 2.0, ou autre) selon vos intentions.
-Si tu veux, je peux générer un fichier LICENSE (MIT) prêt à coller.
 
-Crédits
+# Crédits
 
-Auteur : vous (code fourni/compilé avec Code::Blocks).
+Auteur : korneevscp (compilé avec Code::Blocks).
 
-Inspirations : exemples publics sur l’API Win32 et tutoriels d’apprentissage (usage pédagogique).
-
-Fichiers suggérés à ajouter au dépôt
-
-README.md (ce fichier)
-
-LICENSE (si public)
-
-CHANGELOG.md (si vous comptez itérer)
-
-dll_test/ (exemple de DLL de test)
-
-BUILD.md (instructions détaillées pour MSVC/MinGW/Code::Blocks)
